@@ -1,0 +1,13 @@
+#Blur
+[appearance.blur]
+radius = 3
+
+[[window_rule]]
+blur = true
+blur_optimized = false
+
+[appearance]
+prefer_no_csd = true
+border_width = 1
+corner_radius = 5
+opaque_fullscreen = false

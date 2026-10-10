@@ -1,0 +1,100 @@
+# Umbriel starting configuration
+#
+# Copy this file to ~/.config/umbriel/config.toml. Most changes apply when the
+# file is saved. Check edits with `umbriel config validate`.
+#
+# Complete reference: https://docs.noctalia.dev/umbriel/
+#
+# Commented settings below are examples, not built-in defaults.
+
+# ==============================================================================
+# Includes
+
+# Optional split configuration
+# https://docs.noctalia.dev/umbriel/configuration/#include
+[include]
+files = [
+    "~/.config/umbriel/includes/input.toml",
+    "~/.config/umbriel/includes/outputs.toml",
+    "~/.config/umbriel/includes/keybinds.toml",
+    "~/.config/umbriel/includes/autostart.toml",
+    "~/.config/umbriel/includes/colors.toml",
+    "~/.config/umbriel/includes/appearance.toml",
+    "~/.config/umbriel/includes/layout.toml",
+    "~/.config/umbriel/includes/animation.toml",
+    "~/.config/umbriel/includes/windowrules.toml"
+]
+
+[include.optional]
+files = []
+
+[layout]
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+# Named scratchpads can launch an application when toggled while empty.
+# [[scratchpad]]
+# name = "music"
+# spawn_when_empty = "spotify"
+
+# [[window_rule]]
+# match.app_id = "^spotify$"
+# default_scratchpad = "music"
+
+# Give scratchpad windows their own border colors.
+# [[window_rule]]
+# match.is_scratchpad = true
+# border_color_focused = "#E5C07BFF"
+# border_color_unfocused = "#5C4A2AFF"
+
+# Leave an application that draws its own corners and shadow undecorated.
+# [[window_rule]]
+# match.app_id = "^org[.]gnome[.]TextEditor$"
+# border_width = 0
+# corner_radius = 0
+# shadow = false
+
+# ==============================================================================
+# Layer rules
+# https://docs.noctalia.dev/umbriel/layer-rules/
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_popups = true
+blur_optimized = false
+
+# ==============================================================================
+# Overview
+# Built-in overview and animation values are used. The top-left hot corner opens
+# the overview after a short delay.
+# Overview: https://docs.noctalia.dev/umbriel/workspaces-overview/
+# Animation: https://docs.noctalia.dev/umbriel/animation/
+[hot_corners.top_left]
+enabled = true
+delay_ms = 500
+action = "overview-open"

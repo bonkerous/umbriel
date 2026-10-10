@@ -1,0 +1,17 @@
+[input]
+middle_click_paste = true
+client_window_drag = true
+window_drag_toggle = "none"
+
+# Keyboard settings
+[[input.device]]
+name = "ASUSTek Computer Inc. N-KEY Device"
+layout = "hu"
+
+[input.mouse]
+natural_scroll = false
+accel_profile = "flat"
+
+[input.touchpad]
+tap = true
+natural_scroll = false

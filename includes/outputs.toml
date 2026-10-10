@@ -1,0 +1,7 @@
+# Built-in display
+[output.eDP-1]
+mode = "1920x1080@144"
+vrr = "always"
+tearing = true
+position = [ 0, 0 ]
+scale = 1.0

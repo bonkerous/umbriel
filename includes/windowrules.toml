@@ -1,0 +1,9 @@
+# Steam notification fix
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop$"
+default_position = { x = 0, y = 0, anchor = "top_right" }
+default_focused = false
+
+[[window_rule]]
+match.content_type = "game"
+tearing = true
